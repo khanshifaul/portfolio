@@ -1,0 +1,26 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+autopep8 = "*"
+pylint = "*"
+python-language-server = "*"
+pyperclip = "*"
+
+[packages]
+flask = "*"
+flask-login = "*"
+flask-sqlalchemy = "*"
+flask-bcrypt = "*"
+flask-wtf = "*"
+wtforms = "*"
+flask-migrate = "*"
+flask-limiter = "*"
+flask-mail = "*"
+gunicorn = "*"
+python-dotenv = "*"
+
+[requires]
+python_version = "3.7"
