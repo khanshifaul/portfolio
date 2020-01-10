@@ -13,8 +13,8 @@ def register(app):
     @user.command()
     def create():
         username = input("Enter Username: ")
-        password = getpass("Enter Password: ")
-        confirm_password = input("Confirm Password: ")
+        password = getpass(prompt="Enter Password: ")
+        confirm_password = getpass(prompt="Confirm Password: ")
         if password == confirm_password:
             pw_hash = bcrypt.generate_password_hash(password).decode("utf-8")
             user = User(username=username, password=pw_hash)
