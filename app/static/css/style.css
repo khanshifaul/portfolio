@@ -23,6 +23,8 @@ header {
   position: sticky;
   top: 0;
   z-index: 1;
+  padding-top: .5rem;
+  border-bottom: .5rem solid whitesmoke;
 }
 
 header nav a {
@@ -31,6 +33,10 @@ header nav a {
   color: #fefefe;
   text-decoration: none;
   padding: .5rem 1rem;
+}
+
+section {
+  padding-top: 1.6rem;
 }
 
 section#intro {
@@ -73,6 +79,11 @@ section#intro .container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.contact h3 {
+  color: white;
+  font-size: x-large;
 }
 
 .contact .container {
