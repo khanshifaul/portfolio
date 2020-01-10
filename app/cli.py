@@ -16,7 +16,7 @@ def register(app):
         password = getpass(prompt="Enter Password: ")
         confirm_password = getpass(prompt="Confirm Password: ")
         if password == confirm_password:
-            pw_hash = bcrypt.generate_password_hash(password).decode("utf-8")
+            pw_hash = bcrypt.generate_password_hash(password, 8).decode("utf-8")
             user = User(username=username, password=pw_hash)
             db.session.add(user)
             db.session.commit()
