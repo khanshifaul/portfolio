@@ -7,7 +7,7 @@ class Message(db.Model):
     name = db.Column(db.String(30), nullable=False)
     subject = db.Column(db.String(50), nullable=False)
     message = db.Column(db.String(250), nullable=False)
-    date = db.Column(db.DateTime, nullable=False)
+    date = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
         return f"Message('{self.email}','{self.subject}', '{self.message}')"

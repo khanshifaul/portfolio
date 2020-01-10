@@ -2,6 +2,7 @@ from app import create_app, db
 from flask_wtf import FlaskForm
 from wtforms import StringField, TextAreaField, SubmitField
 from wtforms.validators import DataRequired, Email, ValidationError
+from app.models import Message
 
 class ContactForm(FlaskForm):
     name = StringField("Full Name", validators=[DataRequired()])
@@ -9,3 +10,8 @@ class ContactForm(FlaskForm):
     subject = StringField("Subject", validators=[DataRequired()])
     message = TextAreaField("Message", validators=[DataRequired()])
     sendbtn = SubmitField("Send Message")
+
+    def send_message(form):
+        msg = Message(name=form.name.data, email=form.email.data, subject=form.subject.data, message=form.message.data)
+        db.session.add(msg)
+        db.session.commit()

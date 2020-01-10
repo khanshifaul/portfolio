@@ -10,7 +10,7 @@ def create_app(class_config=Base):
     app = Flask(__name__)
     app.config.from_object(class_config)
     db.init_app(app)
-    migrate.init_app(app)
+    migrate.init_app(app, db)
 
     from app.main import bp as main_bp
     app.register_blueprint(main_bp)
