@@ -1,9 +1,5 @@
 {% extends 'base.html' %}
-{% block home %}
-    <section class="container">
-        <div class="intro">
-            <h2>Hello, I'm Shifaul</h2>
-            <h1>Fullstack Web Developer & Programmer</h1>
-        </div>
-    </section>
-{% endblock home %}
+{% block index %}
+{% include 'intro.html' %}
+{% include 'contact.html' %}
+{% endblock index %}

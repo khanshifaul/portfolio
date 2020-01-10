@@ -1,0 +1,44 @@
+{% block contact %}
+<section id="contact">
+    <div class="contact">
+        <h3>Contact me</h3>
+        <form action="" class="container">
+            {{form.hidden_tag()}}
+
+            {% if form.name.errors %}
+                {% for error in errors %}
+                    <span>{{error}}</span>
+                {% endfor %}
+            {% else %}
+                {{form.name(placeholder='Full Name')}}
+            {% endif %}
+
+            {% if form.email.errors %}
+                {% for error in errors %}
+                    <span>{{error}}</span>
+                {% endfor %}
+            {% else %}
+                {{form.email(placeholder='Email')}}
+            {% endif %}
+
+            {% if form.subject.errors %}
+                {% for error in errors %}
+                    <span>{{error}}</span>
+                {% endfor %}
+            {% else %}
+                {{form.subject(placeholder='Subject')}}
+            {% endif %}
+
+            {% if form.message.errors %}
+                {% for error in errors %}
+                    <span>{{error}}</span>
+                {% endfor %}
+            {% else %}
+                {{form.message(placeholder='Type your message here...')}}
+            {% endif %}
+
+            {{form.sendbtn()}}
+        </form>
+    </div>
+</section>
+{% endblock contact %}

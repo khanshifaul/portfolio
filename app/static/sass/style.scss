@@ -1,0 +1,56 @@
+@import "resets";
+@import "variables";
+
+@import url("https://fonts.googleapis.com/css?family=Aclonica|Days+One|Orbitron:400,500,600,700,800,900|Russo+One|Exo:400,500,600,700,800,900&display=swap");
+
+header {
+  background-color: $outer-space;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  nav {
+    a {
+      font-size: 2rem;
+      font-weight: 600;
+      color: $white;
+      text-decoration: none;
+      padding: .5rem 1rem;
+    }
+  }
+}
+
+section#intro {
+  color: white;
+  background-color: #fefefe70;
+  background-image: url("../img/introbg.jpg");
+  filter: blur(.1rem);
+  background-size: cover;
+  height: 10rem;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding: 10rem 0 10rem 0;
+  z-index: 0;
+  .container {
+    grid-column: 5/-1;
+    text-align: right;
+    padding: 1rem;
+    // z-index: 1001;
+  }
+}
+#contact {
+  background-color: $outer-space;
+}
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .container {
+    display: grid;
+    width: 50%;
+    & > * {
+      margin: 1rem;
+      padding: 0.5rem;
+    }
+  }
+}

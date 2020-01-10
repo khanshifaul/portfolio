@@ -8,6 +8,7 @@ autopep8 = "*"
 pylint = "*"
 python-language-server = "*"
 pyperclip = "*"
+black = "*"
 
 [packages]
 flask = "*"
@@ -24,3 +25,6 @@ python-dotenv = "*"
 
 [requires]
 python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true

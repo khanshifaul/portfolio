@@ -4,6 +4,8 @@ import os
 class Base(object):
     DEBUG = False
     TESTING = False
+    SECRET_KEY = 'secret'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
 class Production(Base):
@@ -19,6 +21,7 @@ class Staging(Base):
 class Development(Base):
     DEBUG = True
     TESTING = True
+    SECRET_KEY = 'dev'
 
 
 class Testing(Base):
