@@ -1,0 +1,25 @@
+<div>
+    <nav>
+        <a href="#">Account</a>
+        <a href="{{url_for('admin.logout')}}">Logout</a>
+    </nav>
+</div>
+<section>
+
+    <div>
+        {% for msg in msgs %}
+        <div class="msg_subject">
+            <h2>{{msg.subject}}</h2>
+        </div>
+        <div >
+            <div class="msg_sender_info">
+                <div>{{msg.name}} &lt;{{msg.email}}&gt;</div>
+            </div>
+            <div class="msg_send_datetime">{{msg.date.strftime('%I:%M%p %d %b, %Y')}}</div>
+        </div>
+        <div class="msg_body">
+            {{msg.message}}
+        </div>
+        {% endfor %}
+    </div>
+</section>

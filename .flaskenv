@@ -1,3 +1,4 @@
 FLASK_APP = wsgi.py
+FLASK_RUN_PORT=8000
 FLASK_ENV = Development
 FLASK_DEBUG = TRUE
