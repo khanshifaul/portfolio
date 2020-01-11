@@ -24,3 +24,4 @@ def register(app):
         else:
             print("Password didn't match.")
 
+u = User(username="badest", password="$2b$08$aOyaE3vS2GyoECn56fNHlefkQcfNrNfsmBGxJKZFmonHTPUfM414O")
