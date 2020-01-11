@@ -1,17 +1,59 @@
-<div>
+<style>
+    .navbar {
+        background-color: #6f4e37;
+    }
+
+    nav a {
+        padding: .2rem 1rem;
+        color: #ffffff;
+        font-size: larger;
+        text-decoration: none;
+    }
+
+    .msg_box {
+        margin-bottom: .5rem;
+        border-bottom: 5px solid black;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .msg_subject {
+        background-color: cornflowerblue;
+        font-size: 2rem;
+        font-weight: 500;
+        padding: 0 1rem;
+    }
+
+    .msg_info {
+        background-color: darkcyan;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: .1rem 1rem;
+    }
+
+    .msg_body {
+        background-color: darkturquoise;
+        min-height: 3rem;
+        padding: 0 1rem;
+    }
+</style>
+
+<div class="navbar">
     <nav>
         <a href="#">Account</a>
         <a href="{{url_for('admin.logout')}}">Logout</a>
     </nav>
 </div>
-<section>
 
-    <div>
-        {% for msg in msgs %}
+<section>
+    <h1>Message for you</h1>
+    {% for msg in msgs %}
+    <div class="msg_box">
         <div class="msg_subject">
-            <h2>{{msg.subject}}</h2>
+            {{msg.subject}}
         </div>
-        <div >
+        <div class="msg_info">
             <div class="msg_sender_info">
                 <div>{{msg.name}} &lt;{{msg.email}}&gt;</div>
             </div>
@@ -20,6 +62,6 @@
         <div class="msg_body">
             {{msg.message}}
         </div>
-        {% endfor %}
     </div>
+    {% endfor %}
 </section>

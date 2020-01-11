@@ -23,8 +23,8 @@ header {
   position: sticky;
   top: 0;
   z-index: 1;
-  padding-top: .5rem;
-  border-bottom: .5rem solid whitesmoke;
+  padding-top: 0.5rem;
+  border-bottom: 0.5rem solid whitesmoke;
 }
 
 header nav a {
@@ -32,19 +32,18 @@ header nav a {
   font-weight: 600;
   color: #fefefe;
   text-decoration: none;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 section {
   padding-top: 1.6rem;
 }
 
-section#intro {
+#intro {
   color: white;
-  background-color: #fefefe70;
-  background-image: url("../img/introbg.jpg");
-  -webkit-filter: blur(0.1rem);
-          filter: blur(0.1rem);
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.439);
+  background-image: url(../img/854376.jpg);
   background-size: cover;
   height: 10rem;
   display: -ms-grid;
@@ -55,10 +54,11 @@ section#intro {
   z-index: 0;
 }
 
-section#intro .container {
-  grid-column: 5/-1;
-  text-align: right;
+#intro .container {
+  grid-column: 1/-1;
+  text-align: left;
   padding: 1rem;
+  padding-left: 3rem;
 }
 
 #contact {
@@ -95,4 +95,44 @@ section#intro .container {
 .contact .container > * {
   margin: 1rem;
   padding: 0.5rem;
+}
+
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.container .image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.container .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  background-color: #008cba;
+}
+
+.container .overlay .text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .overlay {
+  opacity: 1;
 }

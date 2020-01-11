@@ -28,7 +28,7 @@ def login():
 @bp.route("/panel")
 @login_required
 def panel():
-    msgs = Message.query.all()
+    msgs = Message.query.order_by(Message.date.desc()).all()
     return render_template("panel.html", msgs=msgs)
 
 
